@@ -1,5 +1,5 @@
-# Day 21: ETL Basics
-# Author: Aravind Amruth Madanu
+#  ETL Basics
+
 # Purpose: Demonstrate basic ETL pipeline in Python
 
 import pandas as pd
@@ -10,9 +10,9 @@ import os
 if not os.path.exists("data"):
     os.makedirs("data")
 
-# -----------------------------
+
 # Step 1: Extract
-# -----------------------------
+
 # Create sample CSV
 csv_file = "data/sales_data.csv"
 sample_data = {
@@ -31,9 +31,9 @@ df = pd.read_csv(csv_file)
 print("Extracted Data:")
 print(df)
 
-# -----------------------------
+
 # Step 2: Transform
-# -----------------------------
+
 # Calculate total sales
 df['total_sales'] = df['quantity'] * df['price']
 
@@ -46,9 +46,9 @@ df.drop_duplicates(inplace=True)
 print("\nTransformed Data:")
 print(df)
 
-# -----------------------------
+
 # Step 3: Load
-# -----------------------------
+
 # Load data into SQLite
 conn = sqlite3.connect("data/sales_db.sqlite")
 df.to_sql("sales", conn, if_exists="replace", index=False)
