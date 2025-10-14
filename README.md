@@ -50,3 +50,56 @@ Data Loaded into SQLite Database:
 4         5     John         4     80  2023-03-20 00:00:00          320
 
 ETL pipeline executed successfully!
+
+
+# 2
+#  Python ETL Scripts
+
+**Topics Covered:**
+- Build a complete ETL pipeline using Python
+- Extract data from CSV
+- Transform data (handle missing values, standardize city names, convert dates, add new columns)
+- Load data into SQLite database
+- Verify results
+
+**Exercise:**
+- Python ETL script (`day22_python_etl.py`) that:
+  1. Reads `customers.csv`
+  2. Cleans missing and inconsistent data
+  3. Transforms data (adds signup_year column)
+  4. Loads into SQLite database `customers_db.sqlite`
+  5. Prints data at each step
+
+**Skills Demonstrated:**
+- Python ETL pipeline development
+- Pandas for data cleaning and transformation
+- SQLite integration for data storage
+- Practical experience with Extract-Transform-Load workflow
+
+
+# Sample Outputs
+Extracted Data:
+   id     name        city signup_date
+0   1  Aravind    Coventry  2023-01-01
+1   2    Rahul      London  2023-02-15
+2   3    Priya  Manchester  2023-03-10
+3   4      NaN      London  2023-01-25
+4   5     John      London  2023-04-05
+
+Transformed Data:
+   id     name        city signup_date  signup_year
+0   1  Aravind    Coventry  2023-01-01         2023
+1   2    Rahul      London  2023-02-15         2023
+2   3    Priya  Manchester  2023-03-10         2023
+3   4  Unknown      London  2023-01-25         2023
+4   5     John      London  2023-04-05         2023
+
+Data Loaded into SQLite Database:
+   id     name        city          signup_date  signup_year
+0   1  Aravind    Coventry  2023-01-01 00:00:00         2023
+1   2    Rahul      London  2023-02-15 00:00:00         2023
+2   3    Priya  Manchester  2023-03-10 00:00:00         2023
+3   4  Unknown      London  2023-01-25 00:00:00         2023
+4   5     John      London  2023-04-05 00:00:00         2023
+
+ETL pipeline executed successfully!
