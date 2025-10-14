@@ -1,0 +1,6 @@
+order_id,customer,quantity,price,order_date
+1,Aravind,2,100,2023-01-01
+2,Rahul,5,50,2023-02-01
+3,Priya,1,200,2023-01-15
+4,Sita,3,150,2023-03-05
+5,John,4,80,2023-03-20
