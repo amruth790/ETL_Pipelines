@@ -36,7 +36,8 @@ print(df)
 # Step 2: Transform
 
 # Fill missing names
-df["name"].fillna("Unknown", inplace=True)
+df["name"] = df["name"].fillna("Unknown")
+
 
 # Standardize city names
 df["city"] = df["city"].str.title().str.strip()
