@@ -1,4 +1,4 @@
-# Day 23: Airflow Introduction – Minimal ETL DAG
+# Airflow Introduction – Minimal ETL DAG
 
 # DAG: simple_etl
 #
