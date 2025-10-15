@@ -103,3 +103,32 @@ Data Loaded into SQLite Database:
 4   5     John      London  2023-04-05 00:00:00         2023
 
 ETL pipeline executed successfully!
+
+
+
+
+# 3 
+# DAG 
+# Airflow Introduction (Minimal ETL DAG)
+
+**Goal:** Learn how to schedule and monitor ETL with Apache Airflow using a simple DAG.
+
+**What’s in the DAG (`dags/etl_dag.py`):**
+- **Extract:** Reads `data/customers.csv` (auto-creates a sample if missing).
+- **Transform:** Fills missing names, title-cases city, parses `signup_date`, adds `signup_year`.
+- **Load:** Writes to SQLite at `data/customers_db.sqlite` (table: `customers`).
+
+**How to run:**
+1. **Install Airflow** (example for Airflow 2.x):
+   ```bash
+   AIRFLOW_VERSION=2.7.1
+   PYTHON_VERSION="$(python -V | awk '{print $2}' | cut -d. -f1,2)"
+   CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-${PYTHON_VERSION}.txt"
+   pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
+   pip install pandas
+
+
+
+
+
+
