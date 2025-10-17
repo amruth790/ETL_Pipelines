@@ -138,5 +138,27 @@ ETL pipeline executed successfully!
   
 
 
+# 5
+# Dynamic Airflow ETL Pipeline
+
+**Goal:**  
+Learn how to create dynamic DAGs in Airflow that automatically generate ETL tasks for multiple data sources.
+
+**DAG ID:** `dynamic_etl_pipeline`
+
+**Overview:**  
+Instead of writing static tasks, this DAG loops over a list of dataset names (`customers`, `orders`, `products`) and creates individual ETL tasks dynamically.
+
+**Task Pattern:**
+extract_customers → transform_customers → load_customers
+extract_orders → transform_orders → load_orders
+extract_products → transform_products → load_products
+
+**Skills Demonstrated:**
+- Dynamic task creation using Python loops
+- Parameterized PythonOperators (`op_args`)
+- Managing multiple data sources efficiently
+- Writing clean, scalable DAGs
+
 
 
