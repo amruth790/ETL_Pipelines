@@ -160,5 +160,33 @@ extract_products → transform_products → load_products
 - Managing multiple data sources efficiently
 - Writing clean, scalable DAGs
 
+# 6
+#  Conditional Branching in Airflow ETL
 
+**Goal:**  
+Add intelligence to ETL workflows using Airflow’s `BranchPythonOperator`.  
+This enables the DAG to decide automatically whether to proceed or skip ETL steps.
+
+**DAG ID:** `conditional_branching_etl`
+
+**Overview:**  
+This DAG checks if the dataset file exists and meets the size requirement before running ETL.  
+If the file is missing or too small, the DAG branches to a “skip” task instead of failing.
+
+**Workflow:**
+start → extract → check_file_condition
+ |--transform → load → end
+ |--skip_etl → end
+
+
+**Features:**
+- Conditional task flow using `BranchPythonOperator`
+- Validation check for file existence and size
+- Graceful handling of missing data (no failed DAGs)
+- Clean, readable DAG graph
+
+**Expected Output:**
+- CSV file in `dags/data/`
+- SQLite database `conditional_etl.db`
+- Smart branching visible in Airflow’s Graph View
 
