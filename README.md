@@ -190,3 +190,15 @@ start → extract → check_file_condition
 - SQLite database `conditional_etl.db`
 - Smart branching visible in Airflow’s Graph View
 
+
+# 7
+#  Automated ETL Pipeline with Airflow
+
+This project demonstrates how to automate an ETL (Extract, Transform, Load) pipeline using **Apache Airflow**.  
+The DAG is configured to run daily, extracting data from a CSV, transforming it, and loading it into a SQLite database.
+
+## ⚙️ Features
+- Automated task scheduling with Airflow DAGs  
+- Task dependency management (`extract → transform → load`)  
+- Lightweight ETL process using Python and Pandas  
+- SQLite database integration for quick testing
